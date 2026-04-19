@@ -1,0 +1,22 @@
+import { Router } from "express";
+import {
+  getSkincare,
+  getSkincares,
+  createSkincare,
+  updateSkincare,
+  deleteSkincare,
+} from "../controllers/skincareControllers.js";
+import validate from "../middleware/validate.js";
+import {
+  getSkincareSchema,
+  updateSkincareSchema,
+  createSkincareSchema,
+  deleteSkincareSchema,
+} from "../validators/skincareschema.js";
+const skincareRoutes = Router();
+skincareRoutes.get("/", getSkincares);
+skincareRoutes.get("/:id", validate(getSkincareSchema), getSkincare);
+skincareRoutes.post("/", validate(createSkincareSchema), createSkincare);
+skincareRoutes.put("/:id", validate(updateSkincareSchema), updateSkincare);
+skincareRoutes.delete("/:id", validate(deleteSkincareSchema), deleteSkincare);
+export default skincareRoutes;
