@@ -7,6 +7,6 @@ import validate from "../middleware/validate.js";
 import { contactSchema } from "../validators/contactSchema.js";
 
 const router = express.Router();
-router.post("/", validate(contactSchema), createContact);
+router.post("/", createContact);
 router.get("/", getContacts);
 export default router;
