@@ -5,6 +5,7 @@ const skincareSchema = new mongoose.Schema({
   duration: String,
   content: String,
   price: Number,
+  isDeleted: { type: Boolean, default: false },
 });
 
 export const Skincare =

@@ -1,4 +1,6 @@
+import { User } from "../Models/Login.js";
 import mongoose from "mongoose";
+
 const contactSchema = new mongoose.Schema(
   {
     name: String,

@@ -5,6 +5,7 @@ const laserSchema = new mongoose.Schema({
   shortContent: String,
   content: String,
   price: Number,
+  isDeleted: { type: Boolean, default: false },
 });
 
 export const Laser =
